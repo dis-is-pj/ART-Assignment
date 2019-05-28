@@ -12,7 +12,10 @@ def words(a):
 
     # Number of Characters = Number of Spaces + 1
     s = a.count(' ')
-    return(s+1)
+    if a.count('  '):   # Taking care of the typing mistake.
+        return(s+1-a.count('  '))    # When typer types 2 spaces acciedentally.
+    else:
+        return(s+1)
 
 # Taking user input String
 a = input('Please input a string\n')
